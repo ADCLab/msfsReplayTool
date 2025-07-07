@@ -1,0 +1,13 @@
+C:\Users\lopez\Documents\coding\msfsReplayTool\msfsReplayTool\bin\Debug\msfsReplayTool.exe.config
+C:\Users\lopez\Documents\coding\msfsReplayTool\msfsReplayTool\bin\Debug\msfsReplayTool.exe
+C:\Users\lopez\Documents\coding\msfsReplayTool\msfsReplayTool\bin\Debug\msfsReplayTool.pdb
+C:\Users\lopez\Documents\coding\msfsReplayTool\msfsReplayTool\bin\Debug\Microsoft.FlightSimulator.SimConnect.dll
+C:\Users\lopez\Documents\coding\msfsReplayTool\msfsReplayTool\obj\Debug\msfsReplayTool.csproj.AssemblyReference.cache
+C:\Users\lopez\Documents\coding\msfsReplayTool\msfsReplayTool\obj\Debug\msfsReplayTool.Form1.resources
+C:\Users\lopez\Documents\coding\msfsReplayTool\msfsReplayTool\obj\Debug\msfsReplayTool.Properties.Resources.resources
+C:\Users\lopez\Documents\coding\msfsReplayTool\msfsReplayTool\obj\Debug\msfsReplayTool.csproj.GenerateResource.cache
+C:\Users\lopez\Documents\coding\msfsReplayTool\msfsReplayTool\obj\Debug\msfsReplayTool.csproj.CoreCompileInputs.cache
+C:\Users\lopez\Documents\coding\msfsReplayTool\msfsReplayTool\obj\Debug\msfsRepl.E07F7CED.Up2Date
+C:\Users\lopez\Documents\coding\msfsReplayTool\msfsReplayTool\obj\Debug\msfsReplayTool.exe
+C:\Users\lopez\Documents\coding\msfsReplayTool\msfsReplayTool\obj\Debug\msfsReplayTool.pdb
+C:\Users\lopez\Documents\coding\msfsReplayTool\msfsReplayTool\obj\Debug\msfsReplayTool.exe.config
