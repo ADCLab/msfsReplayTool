@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.FlightSimulator.SimConnect; // msfs yess
-using System.Runtime.InteropServices; // for SimConnect API
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates; // for SimConnect API
 
 namespace msfsReplayTool
 {
@@ -41,6 +42,14 @@ namespace msfsReplayTool
             public double longitude; // degrees
             public double altitude; // feet
         }
+
+        // AddToDataDefinition method takes in enum as parameter, defined here
+        // enums start with zero and increase by one, so directly declaring Var as 0 isn't necessary
+        // 0 is the ID for user plane in msfs
+        enum DefineID
+        {
+            Var
+        }
         public Form1()
         {
             InitializeComponent();
@@ -67,6 +76,8 @@ namespace msfsReplayTool
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
+
+            
             try
             {
                 // convert input from textboxes to doubles 
@@ -80,20 +91,15 @@ namespace msfsReplayTool
                 position.longitude = lon;
                 position.altitude = alt;
 
-                // AddToDataDefinition doesn't accept integer values
-                // this doesnt work fix tomorrow
-                Enum DefineID
-                {
-                    aircraftPosition = 0
-                }
+                
 
                 // basically interprets data from the struct and sends it to MSFS
-                simconnect.AddToDataDefinition(DefineID.aircraftPosition, "PLANE LATITUDE", "degrees", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
-                simconnect.AddToDataDefinition(DefineID.aircraftPosition, "PLANE LONGITUDE", "degrees", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
-                simconnect.AddToDataDefinition(DefineID.aircraftPosition, "PLANE ALTITUDE", "feet", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
-                simconnect.RegisterDataDefineStruct<aircraftPosition>(DefineID.aircraftPosition); // register the struct with SimConnect
+                simconnect.AddToDataDefinition(DefineID.Var, "PLANE LATITUDE", "degrees", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
+                simconnect.AddToDataDefinition(DefineID.Var, "PLANE LONGITUDE", "degrees", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
+                simconnect.AddToDataDefinition(DefineID.Var, "PLANE ALTITUDE", "feet", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
+                simconnect.RegisterDataDefineStruct<aircraftPosition>(DefineID.Var); // register the struct with SimConnect
 
-                simconnect.SetDataOnSimObject(DefineID.aircraftPosition, SimConnect.SIMCONNECT_OBJECT_ID_USER, SIMCONNECT_DATA_SET_FLAG.DEFAULT, position); // send the data to MSFS
+                simconnect.SetDataOnSimObject(DefineID.Var, SimConnect.SIMCONNECT_OBJECT_ID_USER, SIMCONNECT_DATA_SET_FLAG.DEFAULT, position); // send the data to MSFS
 
             }
             catch (FormatException ex)
@@ -101,6 +107,21 @@ namespace msfsReplayTool
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        // will understand later
+        protected override void DefWndProc(ref Message m)
+        {
+            if (m.Msg == WM_USER_SIMCONNECT)
+            {
+                if (simconnect != null)
+                    simconnect.ReceiveMessage();
+            }
+            else
+            {
+                base.DefWndProc(ref m);
+            }
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
