@@ -10,3 +10,4 @@ C:\Users\lopez\Documents\coding\msfsReplayTool\msfsReplayTool\obj\Debug\msfsRepl
 C:\Users\lopez\Documents\coding\msfsReplayTool\msfsReplayTool\obj\Debug\msfsRepl.E07F7CED.Up2Date
 C:\Users\lopez\Documents\coding\msfsReplayTool\msfsReplayTool\obj\Debug\msfsReplayTool.exe
 C:\Users\lopez\Documents\coding\msfsReplayTool\msfsReplayTool\obj\Debug\msfsReplayTool.pdb
+C:\Users\lopez\Documents\coding\msfsReplayTool\msfsReplayTool\obj\Debug\msfsReplayTool.exe.config

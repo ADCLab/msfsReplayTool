@@ -46,6 +46,7 @@ namespace msfsReplayTool
         // AddToDataDefinition method takes in enum as parameter, defined here
         // enums start with zero and increase by one, so directly declaring Var as 0 isn't necessary
         // 0 is the ID for user plane in msfs
+       
         enum DefineID
         {
             Var
@@ -53,14 +54,14 @@ namespace msfsReplayTool
         public Form1()
         {
             InitializeComponent();
-
+            
             try
             {
                 simconnect = new SimConnect("connection", this.Handle, WM_USER_SIMCONNECT, null, 0); // establish connection to MSFS
             }
             catch (COMException ex)
             {
-                MessageBox.Show("SimConnect connection failed: " + ex.Message, "there's been an error");
+                MessageBox.Show("SimConnect connection failed: " + ex.Message, "there's been an error"); // make sure msfs is running before starting as this can appear as a result.
             }
         }
 
@@ -81,8 +82,8 @@ namespace msfsReplayTool
             try
             {
                 // convert input from textboxes to doubles 
-                double lat = double.Parse(labelLatitude.Text);
-                double lon = double.Parse(labelLongitude.Text);
+                double lat = double.Parse(textBox1.Text);
+                double lon = double.Parse(textBox2.Text);
                 double alt = 1500.0; // default altitude for now
 
                 // initialize aircraftPosition struct and give values
@@ -101,6 +102,7 @@ namespace msfsReplayTool
 
                 simconnect.SetDataOnSimObject(DefineID.Var, SimConnect.SIMCONNECT_OBJECT_ID_USER, SIMCONNECT_DATA_SET_FLAG.DEFAULT, position); // send the data to MSFS
 
+                Console.WriteLine("Button clicked");
             }
             catch (FormatException ex)
             {
@@ -124,6 +126,16 @@ namespace msfsReplayTool
 
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
