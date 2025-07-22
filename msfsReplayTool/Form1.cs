@@ -65,6 +65,11 @@ namespace msfsReplayTool
             }
         }
 
+        private void descriptionText_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void Longitude_Click(object sender, EventArgs e)
         {
 
@@ -75,6 +80,13 @@ namespace msfsReplayTool
 
         }
 
+        private void labelAltitude_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
 
@@ -82,9 +94,26 @@ namespace msfsReplayTool
             try
             {
                 // convert input from textboxes to doubles 
+                // consider using switch-cases for cleanup?
+               
                 double lat = double.Parse(textBox1.Text);
+                if (string.IsNullOrEmpty(textBox1.Text))
+                {
+                    MessageBox.Show("Please enter a valid latitude.");
+                }
+
                 double lon = double.Parse(textBox2.Text);
-                double alt = 1500.0; // default altitude for now
+                if (string.IsNullOrEmpty(textBox2.Text))
+                {
+                    MessageBox.Show("Please enter a valid longitude.");
+                }
+
+                double alt = double.Parse(textBox3.Text);
+
+                if (string.IsNullOrEmpty(textBox3.Text))
+                {
+                    alt = 1500; // Default altitude is 1500
+                }
 
                 // initialize aircraftPosition struct and give values
                 aircraftPosition position;
@@ -110,7 +139,6 @@ namespace msfsReplayTool
             }
         }
 
-        // will understand later
         protected override void DefWndProc(ref Message m)
         {
             if (m.Msg == WM_USER_SIMCONNECT)
@@ -139,6 +167,12 @@ namespace msfsReplayTool
         {
 
         }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 
     
