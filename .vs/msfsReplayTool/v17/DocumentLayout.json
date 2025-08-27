@@ -1,0 +1,170 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9572505C-132F-4309-8DEC-454B042DA9B5}|msfsReplayTool\\msfsReplayTool.csproj|c:\\users\\lopez\\documents\\coding\\msfsreplaytool\\msfsreplaytool\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9572505C-132F-4309-8DEC-454B042DA9B5}|msfsReplayTool\\msfsReplayTool.csproj|solutionrelative:msfsreplaytool\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9572505C-132F-4309-8DEC-454B042DA9B5}|msfsReplayTool\\msfsReplayTool.csproj|C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsreplaytool\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9572505C-132F-4309-8DEC-454B042DA9B5}|msfsReplayTool\\msfsReplayTool.csproj|solutionrelative:msfsreplaytool\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9572505C-132F-4309-8DEC-454B042DA9B5}|msfsReplayTool\\msfsReplayTool.csproj|C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsreplaytool\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9572505C-132F-4309-8DEC-454B042DA9B5}|msfsReplayTool\\msfsReplayTool.csproj|solutionrelative:msfsreplaytool\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9572505C-132F-4309-8DEC-454B042DA9B5}|msfsReplayTool\\msfsReplayTool.csproj|C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsreplaytool\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9572505C-132F-4309-8DEC-454B042DA9B5}|msfsReplayTool\\msfsReplayTool.csproj|solutionrelative:msfsreplaytool\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9572505C-132F-4309-8DEC-454B042DA9B5}|msfsReplayTool\\msfsReplayTool.csproj|C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsreplaytool\\form1.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{9572505C-132F-4309-8DEC-454B042DA9B5}|msfsReplayTool\\msfsReplayTool.csproj|solutionrelative:msfsreplaytool\\form1.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|msfsReplayTool||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9572505C-132F-4309-8DEC-454B042DA9B5}|msfsReplayTool\\msfsReplayTool.csproj|C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsreplaytool\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{9572505C-132F-4309-8DEC-454B042DA9B5}|msfsReplayTool\\msfsReplayTool.csproj|solutionrelative:msfsreplaytool\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9572505C-132F-4309-8DEC-454B042DA9B5}|msfsReplayTool\\msfsReplayTool.csproj|C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsreplaytool\\microsoft.flightsimulator.simconnect.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{9572505C-132F-4309-8DEC-454B042DA9B5}|msfsReplayTool\\msfsReplayTool.csproj|solutionrelative:msfsreplaytool\\microsoft.flightsimulator.simconnect.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsReplayTool\\Form1.cs",
+              "RelativeDocumentMoniker": "msfsReplayTool\\Form1.cs",
+              "ToolTip": "C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsReplayTool\\Form1.cs",
+              "RelativeToolTip": "msfsReplayTool\\Form1.cs",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAuwLQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T19:44:22.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsReplayTool\\Form1.cs",
+              "RelativeDocumentMoniker": "msfsReplayTool\\Form1.cs",
+              "ToolTip": "C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsReplayTool\\Form1.cs [Design]",
+              "RelativeToolTip": "msfsReplayTool\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T19:44:16.961Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsReplayTool\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "msfsReplayTool\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsReplayTool\\Form1.Designer.cs",
+              "RelativeToolTip": "msfsReplayTool\\Form1.Designer.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAADwv4sAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-22T20:56:04.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.resx",
+              "DocumentMoniker": "C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsReplayTool\\Form1.resx",
+              "RelativeDocumentMoniker": "msfsReplayTool\\Form1.resx",
+              "ToolTip": "C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsReplayTool\\Form1.resx",
+              "RelativeToolTip": "msfsReplayTool\\Form1.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-07-22T20:56:07.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsReplayTool\\App.config",
+              "RelativeDocumentMoniker": "msfsReplayTool\\App.config",
+              "ToolTip": "C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsReplayTool\\App.config",
+              "RelativeToolTip": "msfsReplayTool\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-07-08T19:44:15.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsReplayTool\\Program.cs",
+              "RelativeDocumentMoniker": "msfsReplayTool\\Program.cs",
+              "ToolTip": "C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsReplayTool\\Program.cs",
+              "RelativeToolTip": "msfsReplayTool\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T21:14:23.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "msfsReplayTool",
+              "DocumentMoniker": "C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsReplayTool\\msfsReplayTool.csproj",
+              "RelativeDocumentMoniker": "msfsReplayTool\\msfsReplayTool.csproj",
+              "ToolTip": "C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsReplayTool\\msfsReplayTool.csproj",
+              "RelativeToolTip": "msfsReplayTool\\msfsReplayTool.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-07-08T19:44:12.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Microsoft.FlightSimulator.SimConnect.dll",
+              "DocumentMoniker": "C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsReplayTool\\Microsoft.FlightSimulator.SimConnect.dll",
+              "RelativeDocumentMoniker": "msfsReplayTool\\Microsoft.FlightSimulator.SimConnect.dll",
+              "ToolTip": "C:\\Users\\lopez\\Documents\\coding\\msfsReplayTool\\msfsReplayTool\\Microsoft.FlightSimulator.SimConnect.dll",
+              "RelativeToolTip": "msfsReplayTool\\Microsoft.FlightSimulator.SimConnect.dll",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001697|",
+              "WhenOpened": "2025-07-09T20:07:48.802Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,81 +1,89 @@
-﻿using System;
+﻿using Microsoft.FlightSimulator.SimConnect; // msfs 
+using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.FlightSimulator.SimConnect; // msfs yess
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates; // for SimConnect API
 
 namespace msfsReplayTool
 {
     
-
     public partial class Form1 : Form
     {
 
         SimConnect simconnect = null;
         const int WM_USER_SIMCONNECT = 0x0402; // windows message for SimConnect
 
-       /* This is an actual struct from the api, but just to keep things simple
-        * im going to create my own just to get lat, lon, and alt.
+        // struct for AI Objects 
         struct SIMCONNECT_DATA_INITPOSITION
         {
             public double latitude; // Degrees
             public double longitude; // Degrees
-            public double altitude; // Feet
+            public double altitude; // Feet , default is 1500
             public double pitch; // Degrees
             public double bank; // Degrees
             public double heading; // Degrees
-            public float airspeed; // Knots
-            public float verticalSpeed; // Feet per minute
+            public uint onGround; // 1 to place obj on ground, 0 if obj is airborn
+            public uint airSpeed; // knots, or -1 for aircraft's design cruising speed, -2 to maintain current airspeed
+           
         }
-       */
-
+        
+        // struct for user aircraft
         struct aircraftPosition
         {
             public double latitude; // degrees
             public double longitude; // degrees
             public double altitude; // feet
         }
-
+        
         // AddToDataDefinition method takes in enum as parameter, defined here
-        // enums start with zero and increase by one, so directly declaring Var as 0 isn't necessary
-        // 0 is the ID for user plane in msfs
-       
         enum DefineID
         {
-            Var
+            userPlane, // id 0 
+            pittsAsobo, // id 1
         }
+
         public Form1()
         {
             InitializeComponent();
-            
+
             try
             {
                 simconnect = new SimConnect("connection", this.Handle, WM_USER_SIMCONNECT, null, 0); // establish connection to MSFS
+
+                if (simconnect != null)
+                {
+                    Console.WriteLine("SimConnect connection established");
+
+                    // Defines data from struct
+                    simconnect.AddToDataDefinition(DefineID.userPlane, "PLANE LATITUDE", "degrees", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
+                    simconnect.AddToDataDefinition(DefineID.userPlane, "PLANE LONGITUDE", "degrees", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
+                    simconnect.AddToDataDefinition(DefineID.userPlane, "PLANE ALTITUDE", "feet", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
+
+                    // Registers Data Definition based on specified struct
+                    simconnect.RegisterDataDefineStruct<aircraftPosition>(DefineID.userPlane);
+
+
+                }
             }
             catch (COMException ex)
             {
-                MessageBox.Show("SimConnect connection failed: " + ex.Message, "there's been an error"); // make sure msfs is running before starting as this can appear as a result.
+                MessageBox.Show("SimConnect connection failed: " + ex.Message); // make sure msfs is running before starting as this can appear as a result.
             }
         }
 
-        private void descriptionText_Click(object sender, EventArgs e)
+        private void labelLongitude_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Longitude_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Latitude_Click(object sender, EventArgs e)
+        private void labelLatitude_Click(object sender, EventArgs e)
         {
 
         }
@@ -85,6 +93,30 @@ namespace msfsReplayTool
 
         }
 
+        private void labelSpawnAircraft_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void longitudeTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void latitudeTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void altitudeTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aircraftComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
 
 
         private void buttonConfirm_Click(object sender, EventArgs e)
@@ -93,52 +125,38 @@ namespace msfsReplayTool
             
             try
             {
-                // convert input from textboxes to doubles 
-                // consider using switch-cases for cleanup?
-               
-                double lat = double.Parse(textBox1.Text);
-                if (string.IsNullOrEmpty(textBox1.Text))
-                {
-                    MessageBox.Show("Please enter a valid latitude.");
-                }
+                // convert input from strings to doubles 
+                // Long, Lat, Alt
+                double lat = double.Parse(latitudeTextBox.Text);
+                
 
-                double lon = double.Parse(textBox2.Text);
-                if (string.IsNullOrEmpty(textBox2.Text))
-                {
-                    MessageBox.Show("Please enter a valid longitude.");
-                }
+                double lon = double.Parse(longitudeTextBox.Text);
 
-                double alt = double.Parse(textBox3.Text);
+                double alt = double.Parse(altitudeTextBox.Text);
+                
 
-                if (string.IsNullOrEmpty(textBox3.Text))
-                {
-                    alt = 1500; // Default altitude is 1500
-                }
+                // Plane type
+                string selectedAircraft = aircraftComboBox.SelectedItem.ToString();
+                Console.WriteLine(selectedAircraft); // for debugging
 
-                // initialize aircraftPosition struct and give values
                 aircraftPosition position;
                 position.latitude = lat;
                 position.longitude = lon;
                 position.altitude = alt;
-
+             
                 
 
-                // basically interprets data from the struct and sends it to MSFS
-                simconnect.AddToDataDefinition(DefineID.Var, "PLANE LATITUDE", "degrees", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
-                simconnect.AddToDataDefinition(DefineID.Var, "PLANE LONGITUDE", "degrees", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
-                simconnect.AddToDataDefinition(DefineID.Var, "PLANE ALTITUDE", "feet", SIMCONNECT_DATATYPE.FLOAT64, 0.0f, SimConnect.SIMCONNECT_UNUSED);
-                simconnect.RegisterDataDefineStruct<aircraftPosition>(DefineID.Var); // register the struct with SimConnect
-
-                simconnect.SetDataOnSimObject(DefineID.Var, SimConnect.SIMCONNECT_OBJECT_ID_USER, SIMCONNECT_DATA_SET_FLAG.DEFAULT, position); // send the data to MSFS
+                // Sends data to msfs based on data interpreted and registered from "AddDataToDefinition" and "RegisterDataDefineStruct"
+                simconnect.SetDataOnSimObject(DefineID.userPlane, SimConnect.SIMCONNECT_OBJECT_ID_USER, SIMCONNECT_DATA_SET_FLAG.DEFAULT, position); 
 
                 Console.WriteLine("Button clicked");
+
             }
             catch (FormatException ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-
         protected override void DefWndProc(ref Message m)
         {
             if (m.Msg == WM_USER_SIMCONNECT)
@@ -152,28 +170,11 @@ namespace msfsReplayTool
             }
         }
 
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        }  
+        
     }
-
     
 }
