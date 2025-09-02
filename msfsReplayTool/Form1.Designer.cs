@@ -128,10 +128,8 @@ namespace msfsReplayTool
             this.aircraftComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.aircraftComboBox.FormattingEnabled = true;
             this.aircraftComboBox.Items.AddRange(new object[] {
-            "This",
-            "Is",
-            "A",
-            "Test",
+            "AIRBUS A320 NEO ASOBO",
+            "VL3 AVIATORS CLUB LIVERY",
             "PITTS ASOBO"});
             this.aircraftComboBox.Location = new System.Drawing.Point(553, 87);
             this.aircraftComboBox.Name = "aircraftComboBox";

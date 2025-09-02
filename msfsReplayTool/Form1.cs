@@ -19,20 +19,6 @@ namespace msfsReplayTool
 
         SimConnect simconnect = null;
         const int WM_USER_SIMCONNECT = 0x0402; // windows message for SimConnect
-
-        // struct for AI Objects 
-        struct SIMCONNECT_DATA_INITPOSITION
-        {
-            public double latitude; // Degrees
-            public double longitude; // Degrees
-            public double altitude; // Feet , default is 1500
-            public double pitch; // Degrees
-            public double bank; // Degrees
-            public double heading; // Degrees
-            public uint onGround; // 1 to place obj on ground, 0 if obj is airborn
-            public uint airSpeed; // knots, or -1 for aircraft's design cruising speed, -2 to maintain current airspeed
-           
-        }
         
         // struct for user aircraft
         struct aircraftPosition
@@ -45,9 +31,15 @@ namespace msfsReplayTool
         // AddToDataDefinition method takes in enum as parameter, defined here
         enum DefineID
         {
-            userPlane, // id 0 
-            pittsAsobo, // id 1
+            userPlane,
+            pittsAsobo,
+            aviatorsClub,
+            airbus
         }
+
+        enum DATA_REQUEST_ID
+        { }
+
 
         public Form1()
         {
@@ -133,21 +125,61 @@ namespace msfsReplayTool
                 double lon = double.Parse(longitudeTextBox.Text);
 
                 double alt = double.Parse(altitudeTextBox.Text);
-                
-
-                // Plane type
-                string selectedAircraft = aircraftComboBox.SelectedItem.ToString();
-                Console.WriteLine(selectedAircraft); // for debugging
 
                 aircraftPosition position;
                 position.latitude = lat;
                 position.longitude = lon;
                 position.altitude = alt;
+
+
+                // spawns plane random field in Orlando Airport
+                SIMCONNECT_DATA_INITPOSITION Init;
+                Init.Latitude = 28.4244;
+                Init.Longitude = -81.3105;
+                Init.Altitude = 1500.0;
+                Init.Pitch = 0.0;
+                Init.Bank = 0.0;
+                Init.Heading = 0.0;
+                Init.OnGround = 1;
+                Init.Airspeed = 0;
+
+                // Testing  waypoints
+                /*
+                SIMCONNECT_DATA_WAYPOINT[] test = new SIMCONNECT_DATA_WAYPOINT[3];
+                test[0].Latitude = 0;
+                test[0].Longitude = 0;
+                test[0].Altitude = 0;
+                test[0].Flags = 0;
+                test[0].ktsSpeed = 0;
+                test[0].percentThrottle = 0;
+                */
+
+
+                // Plane type
+                string selectedAircraft = aircraftComboBox.SelectedItem.ToString();
+                switch (selectedAircraft)
+                {
+                    case "PITTS ASOBO":
+                        Console.WriteLine(selectedAircraft); // for debugging
+                        simconnect.AICreateNonATCAircraft(selectedAircraft, "TestPlane", Init, DefineID.pittsAsobo); // spawns AI aircraft at specified location
+                        break;
+                    case "VL3 AVIATORS CLUB LIVERY":
+                            Console.WriteLine(selectedAircraft);
+                        simconnect.AICreateNonATCAircraft(selectedAircraft, "TestPlane", Init, DefineID.aviatorsClub);
+                        break;
+                    case "AIRBUS A320 NEO ASOBO":
+                        Console.WriteLine(selectedAircraft);
+                        simconnect.AICreateNonATCAircraft(selectedAircraft, "TestPlane", Init, DefineID.airbus);
+                        break;
+                }
+
+                
              
                 
 
                 // Sends data to msfs based on data interpreted and registered from "AddDataToDefinition" and "RegisterDataDefineStruct"
                 simconnect.SetDataOnSimObject(DefineID.userPlane, SimConnect.SIMCONNECT_OBJECT_ID_USER, SIMCONNECT_DATA_SET_FLAG.DEFAULT, position); 
+                
 
                 Console.WriteLine("Button clicked");
 
